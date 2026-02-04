@@ -1,0 +1,99 @@
+schema: Custom.CloudflareWRAPHTTP
+description: Schema for Cloudflare WARP HTTP Logs
+fieldDiscoveryEnabled: true
+fields:
+  - name: AccountID
+    required: true
+    type: string
+  - name: Action
+    required: true
+    type: string
+  - name: BlockedFileHash
+    required: true
+    type: string
+  - name: BlockedFileName
+    required: true
+    type: string
+  - name: BlockedFileReason
+    required: true
+    type: string
+  - name: BlockedFileSize
+    required: true
+    type: bigint
+  - name: Datetime
+    required: true
+    type: timestamp
+    timeFormats:
+      - rfc3339
+  - name: DestinationIP
+    required: true
+    type: string
+    indicators:
+      - ip
+  - name: DestinationPort
+    required: true
+    type: bigint
+  - name: DeviceID
+    required: true
+    type: string
+  - name: DeviceName
+    required: true
+    type: string
+  - name: Email
+    required: true
+    type: string
+    indicators:
+      - email
+  - name: HTTPHost
+    required: true
+    type: string
+  - name: HTTPMethod
+    required: true
+    type: string
+  - name: HTTPStatusCode
+    required: true
+    type: bigint
+  - name: HTTPVersion
+    required: true
+    type: string
+  - name: IsIsolated
+    required: true
+    type: boolean
+  - name: PolicyID
+    required: true
+    type: string
+  - name: PolicyName
+    required: true
+    type: string
+  - name: Referer
+    required: true
+    type: string
+  - name: RequestID
+    required: true
+    type: string
+  - name: SessionID
+    required: true
+    type: string
+  - name: SourceIP
+    required: true
+    type: string
+    indicators:
+      - ip
+  - name: SourceInternalIP
+    required: true
+    type: string
+  - name: SourcePort
+    required: true
+    type: bigint
+  - name: URL
+    required: true
+    type: string
+  - name: UntrustedCertificateAction
+    required: true
+    type: string
+  - name: UserAgent
+    required: true
+    type: string
+  - name: UserID
+    required: true
+    type: string

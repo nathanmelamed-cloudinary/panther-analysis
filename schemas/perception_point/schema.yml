@@ -1,0 +1,54 @@
+schema: Custom.PerceptionPoint
+fields:
+  - name: action
+    required: true
+    type: string
+  - name: date
+    required: true
+    type: timestamp
+    timeFormats:
+      - rfc3339
+  - name: event
+    required: true
+    type: string
+  - name: from
+    required: true
+    type: string
+    indicators:
+      - email
+  - name: ipAddr
+    required: true
+    type: string
+    indicators:
+      - ip
+  - name: layers
+    required: true
+    type: string
+  - name: messageId
+    required: true
+    type: string
+  - name: sample
+    required: true
+    type: string
+    indicators:
+      - email
+  - name: scanId
+    required: true
+    type: string
+  - name: subject
+    required: false
+    type: string
+  - name: timestamp
+    required: true
+    type: float
+  - name: to
+    required: true
+    type: string
+    indicators:
+      - email
+  - name: verdict
+    required: true
+    type: string
+  - name: verdictMessage
+    required: true
+    type: string

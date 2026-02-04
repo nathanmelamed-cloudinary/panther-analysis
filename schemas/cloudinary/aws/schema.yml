@@ -1,0 +1,16 @@
+schema: Custom.LookupTableAWSAccounts
+parser:
+  csv:
+    delimiter: ","
+    hasHeader: true
+    trimSpace: true
+fields:
+  - name: account_id
+    required: true
+    type: bigint
+  - name: name
+    required: true
+    type: string
+  - name: isProduction
+    required: true
+    type: boolean

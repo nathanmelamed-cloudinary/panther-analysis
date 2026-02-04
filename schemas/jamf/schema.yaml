@@ -1,0 +1,96 @@
+schema: Custom.Jamf.ComputerCheckIn
+description: Schema for Jamf Pro ComputerCheckIn webhook events
+fieldDiscoveryEnabled: true
+fields:
+  - name: webhook
+    required: true
+    type: object
+    fields:
+      - name: id
+        required: true
+        type: bigint
+      - name: name
+        required: true
+        type: string
+      - name: webhookEvent
+        required: true
+        type: string
+      - name: eventTimestamp
+        required: true
+        type: bigint
+        description: Epoch timestamp in milliseconds
+  - name: event
+    required: true
+    type: object
+    fields:
+      - name: trigger
+        required: true
+        type: string
+      - name: username
+        type: string
+        indicators:
+          - username
+      - name: computer
+        required: true
+        type: object
+        fields:
+          - name: udid
+            required: true
+            type: string
+          - name: deviceName
+            required: true
+            type: string
+          - name: model
+            type: string
+          - name: macAddress
+            type: string
+          - name: alternateMacAddress
+            type: string
+          - name: serialNumber
+            required: true
+            type: string
+          - name: osVersion
+            type: string
+          - name: osBuild
+            type: string
+          - name: userDirectoryID
+            type: string
+            indicators:
+              - email
+          - name: username
+            type: string
+            indicators:
+              - username
+          - name: realName
+            type: string
+          - name: emailAddress
+            type: string
+            indicators:
+              - email
+          - name: phone
+            type: string
+          - name: position
+            type: string
+          - name: department
+            type: string
+          - name: building
+            type: string
+          - name: room
+            type: string
+          - name: ipAddress
+            type: string
+            indicators:
+              - ip
+          - name: reportedIpV4Address
+            type: string
+            indicators:
+              - ip
+          - name: reportedIpV6Address
+            type: string
+            indicators:
+              - ip
+          - name: jssID
+            type: bigint
+          - name: managementId
+            type: string
+

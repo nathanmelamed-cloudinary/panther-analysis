@@ -1,0 +1,53 @@
+schema: Custom.GCP.CloudFunctions
+description: Schema for GCP Cloud Functions logs
+fieldDiscoveryEnabled: true
+fields:
+  - name: insertId
+    required: true
+    type: string
+  - name: labels
+    type: object
+    fields:
+      - name: execution_id
+        type: string
+      - name: instance_id
+        type: string
+      - name: runtime_version
+        type: string
+  - name: logName
+    required: true
+    type: string
+  - name: receiveTimestamp
+    required: true
+    type: timestamp
+    timeFormats:
+      - rfc3339
+  - name: resource
+    required: true
+    type: object
+    fields:
+      - name: labels
+        type: object
+        fields:
+          - name: router_id
+            type: string
+          - name: function_name
+            type: string
+          - name: project_id
+            type: string
+          - name: region
+            type: string
+      - name: type
+        type: string
+  - name: severity
+    type: string
+  - name: textPayload
+    required: true
+    type: string
+  - name: timestamp
+    required: true
+    type: timestamp
+    timeFormats:
+      - rfc3339
+  - name: trace
+    type: string

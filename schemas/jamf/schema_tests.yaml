@@ -1,0 +1,91 @@
+name: Jamf ComputerCheckIn Webhook Test
+logType: Custom.Jamf.ComputerCheckIn
+input: |
+  {
+    "webhook": {
+      "id": 1,
+      "name": "Panther - ComputerCheckin",
+      "webhookEvent": "ComputerCheckIn",
+      "eventTimestamp": 1749700593037
+    },
+    "event": {
+      "trigger": "CLIENT_CHECKIN",
+      "username": "janedoe",
+      "computer": {
+        "udid": "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+        "deviceName": "LAPTOP001",
+        "model": "MacBook Pro (16-inch, Nov 2023) [M3 Pro]",
+        "macAddress": "00:11:22:33:44:55",
+        "alternateMacAddress": "66:77:88:99:AA:BB",
+        "serialNumber": "LAPTOP001",
+        "osVersion": "14.6.1",
+        "osBuild": "23G93",
+        "userDirectoryID": "jane.doe@example.com",
+        "username": "jane.doe@example.com",
+        "realName": "Jane Doe",
+        "emailAddress": "jane.doe@example.com",
+        "phone": "+1-555-123-4567",
+        "position": "Software Engineer",
+        "department": "Engineering",
+        "building": "Main Office",
+        "room": "Floor 3",
+        "ipAddress": "192.0.2.100",
+        "reportedIpV4Address": "192.0.2.50",
+        "reportedIpV6Address": "2001:db8::1",
+        "jssID": 1234,
+        "managementId": "12345678-abcd-1234-efgh-123456789abc"
+      }
+    }
+  }
+
+result: |
+  {
+    "webhook": {
+      "id": 1,
+      "name": "Panther - ComputerCheckin",
+      "webhookEvent": "ComputerCheckIn",
+      "eventTimestamp": 1749700593037
+    },
+    "event": {
+      "trigger": "CLIENT_CHECKIN",
+      "username": "janedoe",
+      "computer": {
+        "udid": "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+        "deviceName": "LAPTOP001",
+        "model": "MacBook Pro (16-inch, Nov 2023) [M3 Pro]",
+        "macAddress": "00:11:22:33:44:55",
+        "alternateMacAddress": "66:77:88:99:AA:BB",
+        "serialNumber": "LAPTOP001",
+        "osVersion": "14.6.1",
+        "osBuild": "23G93",
+        "userDirectoryID": "jane.doe@example.com",
+        "username": "jane.doe@example.com",
+        "realName": "Jane Doe",
+        "emailAddress": "jane.doe@example.com",
+        "phone": "+1-555-123-4567",
+        "position": "Software Engineer",
+        "department": "Engineering",
+        "building": "Main Office",
+        "room": "Floor 3",
+        "ipAddress": "192.0.2.100",
+        "reportedIpV4Address": "192.0.2.50",
+        "reportedIpV6Address": "2001:db8::1",
+        "jssID": 1234,
+        "managementId": "12345678-abcd-1234-efgh-123456789abc"
+      }
+    },
+    "p_log_type": "Custom.Jamf.ComputerCheckIn",
+    "p_any_ip_addresses": [
+      "192.0.2.100",
+      "192.0.2.50",
+      "2001:db8::1"
+    ],
+    "p_any_emails": [
+      "jane.doe@example.com"
+    ],
+    "p_any_usernames": [
+      "jane.doe",
+      "jane.doe@example.com",
+      "janedoe"
+    ]
+  }
